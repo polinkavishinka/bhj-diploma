@@ -14,6 +14,9 @@ class AsyncForm {
    * */
   constructor(element) {
 
+    throw new Error(``);
+    this.element = element;
+    registerEvents();
   }
 
   /**

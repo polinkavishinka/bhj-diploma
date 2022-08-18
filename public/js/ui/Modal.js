@@ -13,6 +13,9 @@ class Modal {
    * */
   constructor(element){
    this.element = element;
+    if (!this.element){
+      throw new Error(``);
+    }
   }
 
   /**
@@ -22,6 +25,7 @@ class Modal {
    * */
   registerEvents() {
     const btnClose =document.querySelectorAll('[data-dismiss="modal"]');
+    console.log(btnClose);
     btnClose.addEventListener('click',(event) =>{
       event.preventDefault();
       this.onClose(e);
