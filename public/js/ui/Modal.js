@@ -11,11 +11,17 @@ class Modal {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor(element){
-   this.element = element;
-    if (!this.element){
-      throw new Error(``);
+  constructor(element) {
+    if (!element) {
+      throw new Error("Не заданы обязательные аргументы");
     }
+    this.element = element;
+    this.registerEvents();
+
+    //  this.element = element;
+    //   if (!this.element){
+    //     throw new Error(``);
+    //   }
   }
 
   /**
@@ -24,13 +30,13 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-    const btnClose =document.querySelectorAll('[data-dismiss="modal"]');
+    const btnClose = document.querySelectorAll('[data-dismiss="modal"]');
     console.log(btnClose);
-    btnClose.addEventListener('click',(event) =>{
-      event.preventDefault();
-      this.onClose(e);
+    btnClose.forEach((element) => {
+      element.addEventListener("click", () => {
+        this.onClose();
+      });
     });
-
   }
 
   /**
@@ -38,22 +44,20 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose(e) {
-    
-      this.close();
-    }
-    
-  
+    this.close();
+  }
+
   /**
    * Открывает окно: устанавливает CSS-свойство display
    * со значением «block»
    * */
   open() {
-    this.element.style.display = 'block';
+    this.element.style.display = "block";
   }
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
-  close(){
-    this.element.style.display = 'none';
+  close() {
+    this.element.style.display = "none";
   }
 }

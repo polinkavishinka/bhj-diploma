@@ -18,13 +18,19 @@ class Sidebar {
    * при нажатии на кнопку .sidebar-toggle
    * */
   static initToggleButton() {
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const miniSidebar = document.querySelector('.sidebar-mini');
-    sidebarToggle.addEventListener ('click', (e) => {
-      e.preventDefault();
-      miniSidebar.classList.toggle('sidebar-open');
-      miniSidebar.classList.toggle('sidebar-collapse');
+    const sidebarToggle = document.querySelector(".sidebar-toggle");
+
+    sidebarToggle.addEventListener("click", () => {
+      document.body.classList.toggle("sidebar-open");
+      document.body.classList.toggle("sidebar-collapse");
     });
+    // const sidebarToggle = document.querySelector('.sidebar-toggle');
+    // const miniSidebar = document.querySelector('.sidebar-mini');
+    // sidebarToggle.addEventListener ('click', (e) => {
+    //   e.preventDefault();
+    //   miniSidebar.classList.toggle('sidebar-open');
+    //   miniSidebar.classList.toggle('sidebar-collapse');
+    // });
   }
 
   /**
@@ -47,8 +53,15 @@ class Sidebar {
       event.preventDefault();
       App.getModal('login').open();
     });
- 
-  
+    const logoutBtn = document.querySelector('.menu-item_logout');
+    logoutBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      User.logout({}, (err, response) => {
+        if (response && response.success) {
+          App.setState('init');
+        }
+      });
+    });
     //User.logout();
     //if ( response.success = true ){
       // App.setState( 'init' );
