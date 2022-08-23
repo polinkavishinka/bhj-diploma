@@ -5,6 +5,18 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "ivan",
+      "email": "ivan@demo.ru",
+      "password": "demo",
+      "id": "wb82aaawl74hjpeu"
+    },
+    {
+      "name": "ivan",
+      "email": "ivan@com",
+      "password": "demo",
+      "id": "wb82a8dsl75xkv0p"
     }
   ],
   "accounts": [
@@ -22,6 +34,16 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Наличные",
+      "user_id": "wb82aaawl74hjpeu",
+      "id": "wb82acl0l75xnmkr"
+    },
+    {
+      "name": "Сбербанк",
+      "user_id": "wb82aaawl74hjpeu",
+      "id": "wb82a6sgl75xnz0o"
     }
   ],
   "transactions": [
@@ -159,6 +181,42 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "wb82a70kl75xospr",
+      "type": "income",
+      "name": "зп",
+      "sum": 5000,
+      "account_id": "wb82acl0l75xnmkr",
+      "user_id": "wb82aaawl74hjpeu",
+      "created_at": "2022-08-23T08:37:17.534Z"
+    },
+    {
+      "id": "wb82acfwl75xr2q3",
+      "type": "income",
+      "name": "подушка",
+      "sum": 10000,
+      "account_id": "wb82a6sgl75xnz0o",
+      "user_id": "wb82aaawl74hjpeu",
+      "created_at": "2022-08-23T08:39:03.819Z"
+    },
+    {
+      "id": "wb82abw8l75xuioc",
+      "type": "expense",
+      "name": "шаурма",
+      "sum": 130,
+      "account_id": "wb82acl0l75xnmkr",
+      "user_id": "wb82aaawl74hjpeu",
+      "created_at": "2022-08-23T08:41:44.459Z"
+    },
+    {
+      "id": "wb82abysl75xwvot",
+      "type": "income",
+      "name": "мымы",
+      "sum": 1111,
+      "account_id": "wb82aa3kl75xvklq",
+      "user_id": "wb82aaawl74hjpeu",
+      "created_at": "2022-08-23T08:43:34.636Z"
     }
   ]
 }

@@ -3,7 +3,7 @@
  * кнопки скрытия/показа колонки в мобильной версии сайта
  * и за кнопки меню
  * */
-class Sidebar {
+ class Sidebar {
   /**
    * Запускает initAuthLinks и initToggleButton
    * */
@@ -56,7 +56,7 @@ class Sidebar {
     const logoutBtn = document.querySelector('.menu-item_logout');
     logoutBtn.addEventListener('click', (event) => {
       event.preventDefault();
-      User.logout({}, (err, response) => {
+      User.logout( (err, response) => {
         if (response && response.success) {
           App.setState('init');
         }

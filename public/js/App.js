@@ -97,7 +97,6 @@ class App {
    * */
   static getModal(modalName) {
     return this.modals[modalName];
-    
   }
 
   /**

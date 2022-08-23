@@ -13,24 +13,23 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor(element) {
-  
     if (!element) {
-      throw new Error('Не заданы обязательные аргументы');
+      throw new Error("Не передан элемент!");
     }
     this.element = element;
     this.registerEvents();
   }
-  
-    //   throw new Error(``);
-  //   this.element = element;
-  //   registerEvents();
-  // }
 
   /**
    * Необходимо запретить отправку формы и в момент отправки
    * вызывает метод submit()
    * */
-  registerEvents() {}
+  registerEvents() {
+    this.element.addEventListener('submit', event => {
+      event.preventDefault();
+      this.submit();
+    });
+  }
 
   /**
    * Преобразует данные формы в объект вида
@@ -39,13 +38,26 @@ class AsyncForm {
    *  'название поля формы 2': 'значение поля формы 2'
    * }
    * */
-  getData() {}
+  getData() {
+    const form = this.element;
+    const formData = new FormData(form);
+    const entries = [...formData.entries()];
+    let result = new Object();
+    entries.forEach((el) => {
+      result[el[0]] = el[1];
+    });
+    return result;
+  }
 
-  onSubmit(options) {}
+  onSubmit(options){
+
+  }
 
   /**
    * Вызывает метод onSubmit и передаёт туда
    * данные, полученные из метода getData()
    * */
-  submit() {}
+  submit() {
+    this.onSubmit(this.getData());
+  }
 }

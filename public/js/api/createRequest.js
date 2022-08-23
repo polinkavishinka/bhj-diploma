@@ -34,20 +34,6 @@ xhr.onload = () => {
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const createRequest = (options = {}) => {
 //   const xhr = new XMLHttpRequest();
 //   xhr.responseType = "json";
